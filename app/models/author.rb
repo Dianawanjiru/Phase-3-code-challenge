@@ -51,18 +51,20 @@ class Author
     #Returns a **unique** array of strings with the categories 
   #of the magazines the author has contributed to
   def topics_contributed
-    @topics = Article.all.map do |article|
-      if article.author.name == self.name
-        article.magazine.category
+    @topics = Article.all.filter do |article|
+      article.author.name == self.name
+      end.map do |some_article|
+        some_article.magazine.category
       end
-    end
     @topics.uniq
   end
+  end
+    
  
    
   
 
-end
+
 
 
   

@@ -53,13 +53,15 @@ class Magazine
   
 ## Returns an array strings of the titles of all articles written for that magazine
 
-  def article_titles
-    Article.all.map do |article|
-      if article.magazine.name == self.name
-        article.title
+      def article_titles
+        Article.all.filter do |article|
+          article.magazine.name == self.name
+        end.map do |filtered_article|
+          filtered_article.title
+        end
       end
-    end
-  end
+  
+  
   
 
   
