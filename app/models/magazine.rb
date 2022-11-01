@@ -32,11 +32,11 @@ class Magazine
  ## Returns an array of Author instances who have written for this magazine
 
  def contributors
-    Article.all.map do |article_inst|
-      if article_inst.magazine.name == self.name
-        article_inst.author
-      end
-    end
+    Article.all.filter do |article_inst|
+       article_inst.magazine.name == self.name
+    end.map do |filtered_article_inst| filtered_article_inst.author
+      
+    
     
 
   end

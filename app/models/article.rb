@@ -14,23 +14,15 @@ class Article
     end
 
 
-    def title
-        @title
-    end
+    
     
     def self.all
         @@all
     end
 
-    def author
-        @author
+   
 
-    end
-
-    def magazine
-        @magazine
-    end
-
+    
 
 
 end

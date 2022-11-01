@@ -4,7 +4,7 @@ require_relative './article.rb'
 
 class Author
   
-  attr_accessor :name
+  attr_reader :name
 
 
   def initialize(name)
@@ -19,9 +19,9 @@ class Author
   
 ##returns all articles written by the author
     def articles
-      Article.all.map do |article| 
-        if article.author.name==self.name
-        end
+      Article.all.filter do |article| 
+         article.author.name==self.name
+        
       end
     end
 
@@ -55,6 +55,7 @@ class Author
       end
     @topics.uniq
   end
+  
   end
     
  
