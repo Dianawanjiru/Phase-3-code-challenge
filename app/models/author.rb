@@ -31,15 +31,12 @@ class Author
     ##returns a unique array of magazine instances the author contributed to
 
     def magazines
-      ##call our articles method and map through it
-      @magazines=Article.all.map do |article|
-        if article.author.name == self.name
-          article.magazine
-        end
+      @magazines = Article.all.filter do |article|
+        article.author.name == self.name
+      end.map do |filtered_magazine|
+        filtered_magazine.magazine
       end
-      ##get unique magazines the author contributed to
       @magazines.uniq
-      
     end
 #Given a magazine (as Magazine instance) and a title (as a string), 
   #creates a new Article instance and associates it with that author and that magazine.
