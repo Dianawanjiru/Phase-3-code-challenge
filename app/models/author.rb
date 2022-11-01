@@ -55,8 +55,10 @@ class Author
       end
     @topics.uniq
   end
-  
+
   end
+
+  
     
  
    
