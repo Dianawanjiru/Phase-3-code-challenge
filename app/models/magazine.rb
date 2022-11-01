@@ -1,5 +1,5 @@
 
-require 'pry'
+
 require_relative "./article.rb"
 
 
@@ -58,4 +58,3 @@ class Magazine
   end
 end
 
-binding.pry
